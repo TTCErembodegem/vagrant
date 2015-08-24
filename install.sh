@@ -6,7 +6,7 @@ sudo -s
 # SETTINGS #
 ############
 DBHOST=localhost
-DBNAME=ttc
+DBNAME=ttc_erembodegem # hardcoded in migrations/
 DBUSER=ttcuser
 DBPASSWD=test123
 
@@ -37,6 +37,7 @@ sudo /etc/init.d/mysql restart
 # SEEDING #
 ###########
 mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/initial.sql
+mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/20150824-frenoy-links.sql
 
 
 ########

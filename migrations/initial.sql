@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 -- Database: `ttc_erembodegem`
 --
 -- CREATE DATABASE `ttc_erembodegem` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
--- USE `ttc_erembodegem`;
+USE `ttc_erembodegem`;
 
 -- --------------------------------------------------------
 
