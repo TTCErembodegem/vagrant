@@ -2,11 +2,18 @@
 
 sudo -s
 
+############
+# SETTINGS #
+############
 DBHOST=localhost
 DBNAME=ttc
 DBUSER=ttcuser
 DBPASSWD=test123
 
+
+################
+# INSTALLATION #
+################
 echo "mysql-server mysql-server/root_password password $DBPASSWD" | debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $DBPASSWD" | debconf-set-selections
 
@@ -19,10 +26,25 @@ mysql -uroot -p$DBPASSWD -e "grant all privileges on $DBNAME.* to '$DBUSER'@'loc
 mysql -uroot -p$DBPASSWD -e "CREATE USER '$DBUSER'@'%' IDENTIFIED BY '$DBPASSWD'"
 mysql -uroot -p$DBPASSWD -e "grant all privileges on $DBNAME.* to '$DBUSER'@'%' identified by '$DBPASSWD'"
 
+mysql -uroot -p$DBPASSWD -e "CREATE USER 'vagrant'@'localhost' IDENTIFIED BY ''"
+mysql -uroot -p$DBPASSWD -e "grant all privileges on $DBNAME.* to 'vagrant'@'localhost' identified by ''"
+
 sed -i "s/^bind-address/#bind-address/" /etc/mysql/my.cnf
 sudo /etc/init.d/mysql restart
 
-echo "MYSQL USER: $DBUSER, PWD: $DBPASSWD, PORT: 33060 and DATABASE: $DBNAME"
 
+###########
+# SEEDING #
+###########
+mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/initial.sql
+
+
+########
+# INFO #
+########
+echo "MYSQL USER: $DBUSER, PWD: $DBPASSWD, PORT: 33060 and DATABASE: $DBNAME"
 # login after `vagrant ssh`:
 # mysql --user=ttcuser --password=test123
+# 
+# Socket problem=
+# sudo pkill -9 mysqld
