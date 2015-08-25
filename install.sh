@@ -9,7 +9,7 @@ DBHOST=localhost
 DBNAME=ttc_erembodegem # hardcoded in migrations/
 DBUSER=ttcuser
 DBPASSWD=test123
-
+# port is 33060
 
 ################
 # INSTALLATION #
