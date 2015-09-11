@@ -38,6 +38,7 @@ sudo /etc/init.d/mysql restart
 ###########
 mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/initial.sql
 mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/20150824-frenoy-links.sql
+mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/20150911-season16.sql
 
 
 ########
