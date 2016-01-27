@@ -39,6 +39,7 @@ sudo /etc/init.d/mysql restart
 mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/initial.sql
 mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/20150824-frenoy-links.sql
 mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/20150911-season16.sql
+mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/20160120-manipulations-web-api.sql
 
 
 ########
@@ -47,6 +48,6 @@ mysql -uroot -p$DBPASSWD $DBNAME < /vagrant/migrations/20150911-season16.sql
 echo "MYSQL USER: $DBUSER, PWD: $DBPASSWD, PORT: 33060 and DATABASE: $DBNAME"
 # login after `vagrant ssh`:
 # mysql --user=ttcuser --password=test123
-# 
+#
 # Socket problem=
 # sudo pkill -9 mysqld
