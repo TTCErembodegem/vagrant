@@ -5,7 +5,8 @@ Vagrant
 - Clone this repo and..
 - `vagrant up`
 
-**ATTN**: Hier geen migraties meer toevoegen (gaan we EF migraties voor gebruiken). Anders gaan de mysql scripts de inserts 2x uitvoeren.
+**ATTN: Hier geen migraties meer toevoegen**.  
+Gebruik `Add-Migration` in `TTC-React-Back` voor alle nieuwe database wijzigingen.
 
 Connect to MySql with
 ---------------------
