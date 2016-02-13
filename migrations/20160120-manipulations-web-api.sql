@@ -18,3 +18,13 @@ update club set Naam='Denderleeuw' where Naam='Denderleeuw 2001';
 
 
 delete from kalender where id in (1508, 1499);
+
+drop table training;
+drop table klassement;
+drop table spelerweek;
+
+delete from verslag where kalenderid in (126, 264, 322, 340, 717, 916, 1711);
+
+
+-- should no longer return rows:
+-- select kalenderid from verslag group by kalenderid having count(0)>1;
