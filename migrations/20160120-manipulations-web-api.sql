@@ -15,6 +15,8 @@ update club set Naam='Wetteren' where Naam='De Orchidee Wetteren';
 update club set Naam='Buggenhout' where Naam='Eendracht Buggenhout';
 update club set Naam='Atelia Gent' where Naam='Atelia Gent vzw';
 update club set Naam='Denderleeuw' where Naam='Denderleeuw 2001';
+update club set Naam='Zottegem' where Naam='Egmont Zottegem';
+update club set Naam='St-Pauwels' where Naam='Sint-Pauwels';
 
 
 delete from kalender where id in (1508, 1499);
@@ -24,7 +26,9 @@ drop table klassement;
 drop table spelerweek;
 
 delete from verslag where kalenderid in (126, 264, 322, 340, 717, 916, 1711);
+delete from clubploegspeler where id=576;
 
 
 -- should no longer return rows:
+-- select * from clubploegspeler group by clubploegid, spelerid having count(0)>1;
 -- select kalenderid from verslag group by kalenderid having count(0)>1;
