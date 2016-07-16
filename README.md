@@ -19,3 +19,21 @@ Database: ttc_erembodegem
 
 Ik had er misschien ook phpmyadmin moeten opzetten...  
 Ik gebruik een Desktop GUI: HeidiSQL (niet ideaal maar veel beter (en gratis) is er wss nog altijd niet)
+
+Bring database up to speed
+--------------------------
+**Running Migrations**  
+Visual Studio > Package Manager Console:  
+`Update-Datebase` with Default project: `Ttc.DataAccess`
+
+Run the `Ttc.Syncer`
+
+Deploy the app
+--------------
+**Frontend**: `npm run deploy`  
+Puts the public files into `./build/release`  
+Usually it is sufficient to upload `app.js`
+
+**Backend**:  
+Build in `release` mode.  
+Upload the `Ttc.*.dll`s
