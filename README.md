@@ -20,6 +20,14 @@ Database: ttc_erembodegem
 Ik had er misschien ook phpmyadmin moeten opzetten...  
 Ik gebruik een Desktop GUI: HeidiSQL (niet ideaal maar veel beter (en gratis) is er wss nog altijd niet)
 
+MySql max_connections:  
+```
+cd /etc/mysql
+cat my.cnf | grep "max_connections"
+
+sudo service mysqld restart
+```
+
 Bring database up to speed
 --------------------------
 **Running Migrations**  
